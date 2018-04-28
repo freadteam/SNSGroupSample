@@ -11,13 +11,13 @@ import UIKit
 class Group: NSObject {
     
     var objectId: String
-    var user: User
+    var userId: [String]
     var createDate: Date
     var groupName: String
     
-    init(objectId: String, user: User, createDate: Date, groupName: String) {
+    init(objectId: String, userId: [String], createDate: Date, groupName: String) {
         self.objectId = objectId
-        self.user = user
+        self.userId = userId
         self.createDate = createDate
         self.groupName = groupName
     }

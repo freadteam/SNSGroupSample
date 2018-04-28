@@ -27,22 +27,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcN-Jk-z2O">
-                        <rect key="frame" x="299" y="6" width="60" height="30"/>
+                        <rect key="frame" x="277" y="2" width="95" height="39"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="0.31408642640000001" blue="0.080771758309999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                        <state key="normal" title="追加">
+                        <state key="normal">
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
-                            <action selector="addMemberWithButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aHO-mb-WT2"/>
+                            <action selector="addMemberWithButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="g5H-cW-fWr"/>
                         </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="userNameLabel" destination="DAx-fZ-ALd" id="Ixy-EK-6vg"/>
+                <outlet property="addButton" destination="BcN-Jk-z2O" id="dXa-ez-6qQ"/>
+                <outlet property="userNameLabel" destination="DAx-fZ-ALd" id="DZf-S4-h81"/>
             </connections>
             <point key="canvasLocation" x="61.5" y="54"/>
         </tableViewCell>

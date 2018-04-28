@@ -17,6 +17,7 @@ class CreateGroupTableViewCell: UITableViewCell {
     var delegates: CreateGroupTableViewCellDelegate?
     
     @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var addButton: UIButton!
     
 
     override func awakeFromNib() {
@@ -32,6 +33,7 @@ class CreateGroupTableViewCell: UITableViewCell {
     
     @IBAction func addMember(button: UIButton) {
         self.delegates?.didTapAddButton(tableViewCell: self, button: button)
+       
     }
     
 }

@@ -93,8 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				2CEBE8C22093F22B002B8425 /* AppDelegate.swift */,
-				2CD470D22093F86800BB8EFF /* Group.swift */,
 				2CD470D42093F8C100BB8EFF /* User.swift */,
+				2CD470D22093F86800BB8EFF /* Group.swift */,
 				2CD470C82093F45A00BB8EFF /* SignUpViewController.swift */,
 				2CD470C62093F45300BB8EFF /* SignInViewController.swift */,
 				2CEBE8C42093F22B002B8425 /* ViewController.swift */,
@@ -409,7 +409,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P8JXGM6U3;
 				INFOPLIST_FILE = SNSGroupSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +429,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P8JXGM6U3;
 				INFOPLIST_FILE = SNSGroupSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

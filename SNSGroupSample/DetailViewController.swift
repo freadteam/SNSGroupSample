@@ -9,9 +9,14 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet var groupNameLabel: UILabel!
+    var selectedName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        groupNameLabel.text = selectedName
 
         // Do any additional setup after loading the view.
     }

@@ -11,12 +11,12 @@ import UIKit
 class User: NSObject {
     
     var objectId: String
-    var userId: String
+    var userName: String
    // var displayName: String?
  
-    init(objectId: String, userId: String) {
+    init(objectId: String, userName: String) {
         self.objectId = objectId
-        self.userId = userId
+        self.userName = userName
     }
     
 }
