@@ -38,6 +38,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="グループ一覧" id="ean-35-RWg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="H2s-yi-5ZF">
+                            <connections>
+                                <action selector="showmenu" destination="BYZ-38-t0r" id="oA0-LY-yg7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="Hm2-sX-fTK">
                             <connections>
                                 <segue destination="TYS-J2-bHY" kind="show" id="mAf-dy-gGz"/>

@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol TableViewCellDelegate {
+    func didTapMenuButton(tableViewCell: UITableViewCell, button: UIButton)
+}
+
 class TableViewCell: UITableViewCell {
+    
+    var delegate: TableViewCellDelegate?
     
     @IBOutlet var groupLabel: UILabel!
     @IBOutlet var createDateLabel: UILabel!
@@ -22,6 +28,10 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteButton(button: UIButton) {
+        self.delegate?.didTapMenuButton(tableViewCell: self, button: button)
     }
     
 }
