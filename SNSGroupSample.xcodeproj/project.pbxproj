@@ -71,6 +71,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2C29768F2094C2AC00672A05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CD470D42093F8C100BB8EFF /* User.swift */,
+				2CD470D22093F86800BB8EFF /* Group.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C2976902094C2B200672A05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CEBE8C62093F22B002B8425 /* Main.storyboard */,
+				2CD470CE2093F74900BB8EFF /* TableViewCell.swift */,
+				2CD470CF2093F74900BB8EFF /* TableViewCell.xib */,
+				2CCB08A8209401B20010C8A1 /* CreateGroupTableViewCell.swift */,
+				2CCB08A9209401B20010C8A1 /* CreateGroupTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C2976912094C2C600672A05 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CEBE8C22093F22B002B8425 /* AppDelegate.swift */,
+				2CD470C82093F45A00BB8EFF /* SignUpViewController.swift */,
+				2CD470C62093F45300BB8EFF /* SignInViewController.swift */,
+				2CEBE8C42093F22B002B8425 /* ViewController.swift */,
+				2CD470D62093FAF900BB8EFF /* CreateGroupViewController.swift */,
+				2CD470CC2093F71F00BB8EFF /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		2CEBE8B62093F22B002B8425 = {
 			isa = PBXGroup;
 			children = (
@@ -92,19 +126,9 @@
 		2CEBE8C12093F22B002B8425 /* SNSGroupSample */ = {
 			isa = PBXGroup;
 			children = (
-				2CEBE8C22093F22B002B8425 /* AppDelegate.swift */,
-				2CD470D42093F8C100BB8EFF /* User.swift */,
-				2CD470D22093F86800BB8EFF /* Group.swift */,
-				2CD470C82093F45A00BB8EFF /* SignUpViewController.swift */,
-				2CD470C62093F45300BB8EFF /* SignInViewController.swift */,
-				2CEBE8C42093F22B002B8425 /* ViewController.swift */,
-				2CD470CE2093F74900BB8EFF /* TableViewCell.swift */,
-				2CD470CF2093F74900BB8EFF /* TableViewCell.xib */,
-				2CD470D62093FAF900BB8EFF /* CreateGroupViewController.swift */,
-				2CCB08A8209401B20010C8A1 /* CreateGroupTableViewCell.swift */,
-				2CCB08A9209401B20010C8A1 /* CreateGroupTableViewCell.xib */,
-				2CD470CC2093F71F00BB8EFF /* DetailViewController.swift */,
-				2CEBE8C62093F22B002B8425 /* Main.storyboard */,
+				2C29768F2094C2AC00672A05 /* Models */,
+				2C2976902094C2B200672A05 /* Views */,
+				2C2976912094C2C600672A05 /* Controllers */,
 				2CD470C42093F40100BB8EFF /* SignIn.storyboard */,
 				2CEBE8C92093F22D002B8425 /* Assets.xcassets */,
 				2CEBE8CB2093F22D002B8425 /* LaunchScreen.storyboard */,
