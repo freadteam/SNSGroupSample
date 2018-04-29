@@ -9,7 +9,7 @@
 import UIKit
 import NCMB
 
-class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DetailTableViewCellDelegate {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var memberTableView: UITableView!
     @IBOutlet var groupNameLabel: UILabel!
@@ -45,8 +45,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! DetailTableViewCell
         
-        cell.delegate = self
-        
         cell.memberLabel.text = users[indexPath.row].userName
         
         return cell
@@ -77,43 +75,5 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             }
         })
     }
-    
-    func didTapDeleteButton(tableViewCell: UITableViewCell, button: UIButton) {
-        
-        let alert = UIAlertController(title: "メンバーの削除", message: "このメンバーを削除しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            //削除
-            let objectId = self.users[tableViewCell.tag].objectId
-            let index = self.selectedGroup?.memberObjectIds.index(of: objectId)
-            self.selectedGroup?.memberObjectIds.remove(at: index!)
-            
-            let query = NCMBQuery(className: "Group")
-            query?.whereKey("objectId", equalTo: self.selectedGroup?.objectId)
-            query?.findObjectsInBackground({ (result, error) in
-                if error != nil {
-                } else {
-                    let object = result as! [NCMBObject]
-                    let objectIds = object.first
-                    objectIds?.setObject(self.selectedGroup?.memberObjectIds, forKey: "groupMemberObjectId")
-                    objectIds?.saveInBackground({ (error) in
-                        if error != nil {
-                        } else {
-                            //update成功
-                        }
-                    })
-                    
-                }
-            })
-            
-            self.loadMembers()
-        })
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        })
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     
 }

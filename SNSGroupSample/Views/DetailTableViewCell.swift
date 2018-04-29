@@ -8,13 +8,9 @@
 
 import UIKit
 
-protocol DetailTableViewCellDelegate {
-    func didTapDeleteButton(tableViewCell: UITableViewCell, button: UIButton)
-}
+
 
 class DetailTableViewCell: UITableViewCell {
-    
-    var delegate: DetailTableViewCellDelegate?
     
     @IBOutlet var memberLabel: UILabel!
     @IBOutlet var deleteButton: UIButton!
@@ -28,11 +24,6 @@ class DetailTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    @IBAction func deleteMember(button: UIButton) {
-    self.delegate?.didTapDeleteButton(tableViewCell: self, button: button)
-        
     }
     
 }
