@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.selectedName = selectedGroup?.groupName
+            detailViewController.selectedGroup = selectedGroup
         }
     }
     
@@ -109,8 +109,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.groupTableView.reloadData()
             }
         })
-        
-        
     }
     
     func didTapMenuButton(tableViewCell: UITableViewCell, button: UIButton) {

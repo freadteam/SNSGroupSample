@@ -18,7 +18,7 @@ class CreateGroupViewController: UIViewController, UISearchBarDelegate, UITableV
     var users = [User]()
     //追加したユーザーのobjectIdの配列
     var selectedUseObjectId = [NCMBUser.current().objectId!]
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,7 +163,6 @@ class CreateGroupViewController: UIViewController, UISearchBarDelegate, UITableV
       
     }
  
-    
     //メンバーのobjectIdを追加
     func didTapAddButton(tableViewCell: UITableViewCell, button: UIButton) {
         
@@ -176,30 +175,43 @@ class CreateGroupViewController: UIViewController, UISearchBarDelegate, UITableV
            selectedUseObjectId.append(users[tableViewCell.tag].objectId)
             button.setTitle("追加済み", for: .normal)
         }
-        
     }
-    
     
     //グループ作成ボタン
     @IBAction func makeGroup() {
-        let object = NCMBObject(className: "Group")
-        object?.setObject(navigationItem.title, forKey: "groupName")
-        object?.setObject(selectedUseObjectId, forKey: "groupMemberObjectId")
-        object?.setObject(NCMBUser.current(), forKey: "user")
-        object?.saveInBackground({ (error) in
-            if error != nil {
-                // SVProgressHUD.showError(withStatus: error!.localizedDescription)
-            } else {
-                let alertController = UIAlertController(title: "成功", message: "グループ作成に成功しました", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    self.navigationController?.popViewController(animated: true)
-                })
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion: nil)
-            }
-        })
+        
+        let alert = UIAlertController(title: "グループの削除", message: "グループ名を削除しますか", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        //okした時の処理
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+
+            let object = NCMBObject(className: "Group")
+            object?.setObject(self.navigationItem.title, forKey: "groupName")
+            object?.setObject(self.selectedUseObjectId, forKey: "groupMemberObjectId")
+            object?.setObject(NCMBUser.current(), forKey: "user")
+            object?.saveInBackground({ (error) in
+                if error != nil {
+                    // SVProgressHUD.showError(withStatus: error!.localizedDescription)
+                } else {
+                    let alertController = UIAlertController(title: "成功", message: "グループ作成に成功しました", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    alertController.addAction(action)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            })
+            
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
-    
     
     
 }
