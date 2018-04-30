@@ -112,7 +112,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func didTapMenuButton(tableViewCell: UITableViewCell, button: UIButton) {
-        let alert = UIAlertController(title: "グループの削除", message: "グループ名を削除しますか", preferredStyle: .alert)
+        let alert = UIAlertController(title: "グループの削除", message: "このグループを削除しますか", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "キャンセル", style: .default) { (action) in
             self.navigationController?.popViewController(animated: true)
         }

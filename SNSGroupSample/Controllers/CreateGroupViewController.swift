@@ -180,7 +180,7 @@ class CreateGroupViewController: UIViewController, UISearchBarDelegate, UITableV
     //グループ作成ボタン
     @IBAction func makeGroup() {
         
-        let alert = UIAlertController(title: "グループの削除", message: "グループ名を削除しますか", preferredStyle: .alert)
+        let alert = UIAlertController(title: "グループの作成", message: "グループを作成しますか", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "キャンセル", style: .default) { (action) in
             alert.dismiss(animated: true, completion: nil)
         }
